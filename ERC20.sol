@@ -53,6 +53,8 @@ contract FixedSupplyToken {
     }
 
     function transfer(address to, uint tokens) public returns (bool success) {
+        string unused;
+        
         balances[msg.sender] = balances[msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
         emit Transfer(msg.sender, to, tokens);

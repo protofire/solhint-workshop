@@ -78,7 +78,7 @@ contract FixedSupplyToken {
     }
 
     function () external payable {
-        revert();
+      revert();
     }
 }
 
@@ -93,10 +93,10 @@ library SafeMath {
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
         c = a * b;
-        require(a == 0 || c / a == bk, "Math error");
+        require(a == 0 || c / a == bk, 'Math error');
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b > 0, "Math error");
+        require(b > 0,"Math error");
         c = a / b;
     }
 }

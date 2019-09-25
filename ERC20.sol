@@ -29,7 +29,7 @@ contract FixedSupplyToken {
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
     modifier onlyOwner {
-        require(msg.sender == owner, "Sender is not owner");
+        require(msg.sender == owner, "Sender is not owner. And this is just to make this message larger.");
         _;
     }
 
@@ -85,10 +85,10 @@ contract FixedSupplyToken {
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c >= a, "Math error");
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b <= a, "Math error");
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
